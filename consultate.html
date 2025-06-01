@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Консультации | Доктор Прокопьева Т.В.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-light: #3a5169;
+            --secondary: #c19a6b;
+            --light: #f8f5f2;
+            --dark: #1a1a1a;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header */
+        .service-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 100px 0 150px;
+            text-align: center;
+            clip-path: ellipse(120% 100% at 50% 0%);
+            margin-bottom: 80px;
+        }
+        
+        .service-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Контент */
+        .service-content {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+        
+        .consultation-type {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .consultation-type::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .consultation-type h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .consultation-type h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .procedure-list {
+            margin: 25px 0;
+            padding-left: 20px;
+        }
+        
+        .procedure-list li {
+            margin-bottom: 15px;
+            position: relative;
+            list-style-type: none;
+            padding-left: 30px;
+        }
+        
+        .procedure-list li::before {
+            content: '•';
+            color: var(--secondary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .price-box {
+            background: rgba(193, 154, 107, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        /* Кнопка */
+        .appointment-btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .appointment-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .service-header {
+                padding: 80px 0 120px;
+            }
+            
+            .consultation-type {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка страницы -->
+    <header class="service-header">
+        <div class="container">
+            <h1>Виды консультаций</h1>
+            <p>Профессиональные консультации с индивидуальным подходом к каждому пациенту</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="service-content">
+            <!-- Онлайн-консультация -->
+            <div class="consultation-type">
+                <h2>1. Онлайн-консультация</h2>
+                <p><strong>Консультативно-информационный характер</strong></p>
+                
+                <div class="price-box">
+                    <span class="price">5 000 руб.</span>
+                </div>
+                
+                <h3>Что включает:</h3>
+                <ul class="procedure-list">
+                    <li>Сбор жалоб и анамнеза жизни пациента</li>
+                    <li>Анализ истории заболевания</li>
+                    <li>Определение необходимого объема лабораторно-диагностических исследований</li>
+                    <li>Предварительная оценка состояния</li>
+                    <li>Рекомендации по дальнейшим действиям</li>
+                    <li>Определение необходимости очного осмотра</li>
+                </ul>
+                
+                <h3>Продолжительность:</h3>
+                <p>30-40 минут</p>
+                
+                <h3>Результат:</h3>
+                <p>Постановка предварительного диагноза и определение тактики дальнейшего ведения пациента</p>
+                
+                <button class="appointment-btn">Записаться на онлайн-консультацию</button>
+            </div>
+            
+            <!-- Очная консультация -->
+            <div class="consultation-type">
+                <h2>2. Очная консультация с осмотром</h2>
+                <p><strong>Консультативно-диагностический осмотр</strong></p>
+                
+                <div class="price-box">
+                    <span class="price">8 000 руб.</span>
+                </div>
+                
+                <h3>Что включает:</h3>
+                <ul class="procedure-list">
+                    <li>Детальный сбор жалоб и анамнеза</li>
+                    <li>Осмотр перианальной области</li>
+                    <li>Пальцевое исследование прямой кишки</li>
+                    <li>Аноскопия (осмотр анального канала)</li>
+                    <li>Ректороманоскопия (осмотр прямой и части сигмовидной кишки)</li>
+                    <li>Интерпретация результатов предыдущих исследований</li>
+                </ul>
+                
+                <h3>Продолжительность:</h3>
+                <p>40-60 минут</p>
+                
+                <h3>Результат:</h3>
+                <p>Постановка точного диагноза и разработка индивидуального плана лечения</p>
+                
+                <button class="appointment-btn">Записаться на очную консультацию</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер и скрипты можно добавить по аналогии с главной страницей -->
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Диагностика и лечение парапроктита | Доктор Прокопьева Т.В.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-light: #3a5169;
+            --secondary: #c19a6b;
+            --light: #f8f5f2;
+            --dark: #1a1a1a;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header */
+        .treatment-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 100px 0 150px;
+            text-align: center;
+            clip-path: ellipse(120% 100% at 50% 0%);
+            margin-bottom: 80px;
+        }
+        
+        .treatment-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Контент */
+        .treatment-content {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+        
+        .treatment-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .treatment-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .treatment-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .method-card {
+            background: rgba(248, 245, 242, 0.5);
+            border-left: 3px solid var(--secondary);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .method-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .method-card .price {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-top: 15px;
+        }
+        
+        .advantages-list, .stages-list, .symptoms-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .advantages-list li, .stages-list li, .symptoms-list li {
+            margin-bottom: 12px;
+            position: relative;
+            list-style-type: none;
+            padding-left: 30px;
+        }
+        
+        .advantages-list li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .symptoms-list li::before {
+            content: '!';
+            color: #e74c3c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .stages-list li::before {
+            content: counter(list-item);
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .stages-list {
+            counter-reset: list-item;
+        }
+        
+        .warning-box {
+            background: rgba(255, 235, 235, 0.5);
+            border-left: 3px solid #e74c3c;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Кнопка */
+        .appointment-btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .appointment-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .treatment-header {
+                padding: 80px 0 120px;
+            }
+            
+            .treatment-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка страницы -->
+    <header class="treatment-header">
+        <div class="container">
+            <h1>Диагностика и лечение парапроктита</h1>
+            <p>Современные подходы к лечению острого и хронического парапроктита</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="treatment-content">
+            <!-- О заболевании -->
+            <div class="treatment-section">
+                <h2>Что такое парапроктит?</h2>
+                <p>Парапроктит — это гнойное воспаление клетчатки вокруг прямой кишки, вызванное проникновением инфекции через анальные железы. Заболевание требует своевременного лечения для предотвращения серьезных осложнений.</p>
+                
+                <div class="warning-box">
+                    <h3>Тревожные симптомы:</h3>
+                    <ul class="symptoms-list">
+                        <li>Сильная пульсирующая боль в области прямой кишки</li>
+                        <li>Повышение температуры тела (до 38-39°C)</li>
+                        <li>Отек и покраснение перианальной области</li>
+                        <li>Болезненная дефекация</li>
+                        <li>Общая слабость и интоксикация</li>
+                        <li>Гнойные выделения из прямой кишки (при хронической форме)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Диагностика -->
+            <div class="treatment-section">
+                <h2>Современная диагностика</h2>
+                <p>Для точной диагностики парапроктита я использую комплексный подход:</p>
+                
+                <div class="method-card">
+                    <h3>1. Первичный осмотр</h3>
+                    <ul class="advantages-list">
+                        <li>Пальцевое ректальное исследование</li>
+                        <li>Оценка общего состояния</li>
+                        <li>Анализ жалоб и анамнеза</li>
+                    </ul>
+                </div>
+                
+                <div class="method-card">
+                    <h3>2. Инструментальные методы</h3>
+                    <ul class="advantages-list">
+                        <li><strong>Аноскопия</strong> - осмотр анального канала</li>
+                        <li><strong>Ректороманоскопия</strong> - исследование прямой кишки</li>
+                        <li><strong>УЗИ</strong> - для определения локализации и размеров гнойника</li>
+                        <li><strong>Фистулография</strong> - при хронической форме (свищах)</li>
+                    </ul>
+                </div>
+                
+                <div class="method-card">
+                    <h3>3. Лабораторные исследования</h3>
+                    <ul class="advantages-list">
+                        <li>Общий анализ крови (лейкоцитоз, СОЭ)</li>
+                        <li>Бактериологическое исследование гноя</li>
+                        <li>Биохимический анализ крови при тяжелых формах</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Методы лечения -->
+            <div class="treatment-section">
+                <h2>Эффективные методы лечения</h2>
+                
+                <div class="method-card">
+                    <h3>1. Острый парапроктит</h3>
+                    <p><strong>Хирургическое лечение в экстренном порядке:</strong></p>
+                    <ul class="advantages-list">
+                        <li>Вскрытие и дренирование гнойника</li>
+                        <li>Удаление пораженной анальной железы</li>
+                        <li>Антибактериальная терапия</li>
+                        <li>Послеоперационное ведение</li>
+                    </ul>
+                    <div class="price">От 25 000 руб.</div>
+                </div>
+                
+                <div class="method-card">
+                    <h3>2. Хронический парапроктит (свищи прямой кишки)</h3>
+                    <p><strong>Плановое хирургическое лечение:</strong></p>
+                    <ul class="advantages-list">
+                        <li>Иссечение свища в пределах здоровых тканей</li>
+                        <li>Лазерная абляция свищевого хода</li>
+                        <li>Метод лигатурирования</li>
+                        <li>Пластические методы при сложных свищах</li>
+                    </ul>
+                    <div class="price">От 35 000 руб.</div>
+                </div>
+                
+                <div class="method-card">
+                    <h3>3. Послеоперационная реабилитация</h3>
+                    <ul class="advantages-list">
+                        <li>Индивидуальный подбор медикаментов</li>
+                        <li>Перевязки с современными материалами</li>
+                        <li>Физиотерапевтические процедуры</li>
+                        <li>Рекомендации по питанию и гигиене</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Преимущества -->
+            <div class="treatment-section">
+                <h2>Почему стоит обратиться ко мне?</h2>
+                <ul class="advantages-list">
+                    <li>Опыт более 100 успешных операций при парапроктите</li>
+                    <li>Применение щадящих хирургических техник</li>
+                    <li>Минимальная травматизация тканей</li>
+                    <li>Снижение риска рецидивов до 2-3%</li>
+                    <li>Индивидуальный подход к каждому пациенту</li>
+                    <li>Комфортные условия пребывания</li>
+                </ul>
+            </div>
+            
+            <!-- Этапы лечения -->
+            <div class="treatment-section">
+                <h2>Как проходит лечение?</h2>
+                <ol class="stages-list">
+                    <li><strong>Экстренная консультация</strong> - при остром процессе</li>
+                    <li><strong>Диагностика</strong> - определение формы и локализации</li>
+                    <li><strong>Подготовка к операции</strong> - минимальная (анализы, ЭКГ)</li>
+                    <li><strong>Хирургическое вмешательство</strong> - 20-40 минут</li>
+                    <li><strong>Госпитализация</strong> - 1-2 дня при неосложненных формах</li>
+                    <li><strong>Послеоперационное наблюдение</strong> - 2 недели</li>
+                </ol>
+                
+                <div class="warning-box">
+                    <h3>Важно!</h3>
+                    <p>Парапроктит не лечится консервативными методами! При первых симптомах необходимо срочно обратиться к проктологу для предотвращения осложнений.</p>
+                </div>
+                
+                <button class="appointment-btn">Срочная запись на прием</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

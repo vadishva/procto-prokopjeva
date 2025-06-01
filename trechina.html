@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лечение анальных трещин | Доктор Прокопьева Т.В.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-light: #3a5169;
+            --secondary: #c19a6b;
+            --light: #f8f5f2;
+            --dark: #1a1a1a;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header */
+        .treatment-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 100px 0 150px;
+            text-align: center;
+            clip-path: ellipse(120% 100% at 50% 0%);
+            margin-bottom: 80px;
+        }
+        
+        .treatment-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Контент */
+        .treatment-content {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+        
+        .treatment-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .treatment-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .treatment-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .method-card {
+            background: rgba(248, 245, 242, 0.5);
+            border-left: 3px solid var(--secondary);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .method-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .method-card .price {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-top: 15px;
+        }
+        
+        .advantages-list, .stages-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .advantages-list li, .stages-list li {
+            margin-bottom: 12px;
+            position: relative;
+            list-style-type: none;
+            padding-left: 30px;
+        }
+        
+        .advantages-list li::before, .stages-list li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .warning-box {
+            background: rgba(255, 235, 235, 0.5);
+            border-left: 3px solid #e74c3c;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Кнопка */
+        .appointment-btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .appointment-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .treatment-header {
+                padding: 80px 0 120px;
+            }
+            
+            .treatment-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка страницы -->
+    <header class="treatment-header">
+        <div class="container">
+            <h1>Лечение анальных трещин</h1>
+            <p>Безболезненные современные методики с быстрым восстановлением</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="treatment-content">
+            <!-- О заболевании -->
+            <div class="treatment-section">
+                <h2>Что такое анальная трещина?</h2>
+                <p>Анальная трещина — это линейный разрыв слизистой оболочки анального канала, вызывающий сильную боль при дефекации и кровотечения. Различают острую (до 6 недель) и хроническую формы заболевания.</p>
+                
+                <div class="warning-box">
+                    <h3>Тревожные симптомы:</h3>
+                    <ul class="advantages-list">
+                        <li>Острая боль во время и после дефекации</li>
+                        <li>Кровь алого цвета на туалетной бумаге или поверхности кала</li>
+                        <li>Спазм анального сфинктера</li>
+                        <li>Дискомфорт в анальной области в покое</li>
+                        <li>Зуд и жжение в заднем проходе</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Методы лечения -->
+            <div class="treatment-section">
+                <h2>Современные методы лечения</h2>
+                <p>В своей практике я применяю комплексный подход, выбирая метод лечения в зависимости от типа трещины (острая/хроническая) и индивидуальных особенностей пациента.</p>
+                
+                <div class="method-card">
+                    <h3>1. Консервативное лечение (острая трещина)</h3>
+                    <ul class="advantages-list">
+                        <li>Специальные мази и свечи для заживления</li>
+                        <li>Препараты для снятия спазма сфинктера</li>
+                        <li>Коррекция питания и режима дефекации</li>
+                        <li>Физиотерапевтические процедуры</li>
+                        <li>Лечебные блокады (при выраженном болевом синдроме)</li>
+                    </ul>
+                    <div class="price">От 7 000 руб. (курс лечения)</div>
+                </div>
+                
+                <div class="method-card">
+                    <h3>2. Малоинвазивные методы (хроническая трещина)</h3>
+                    <ul class="advantages-list">
+                        <li><strong>Ботулинотерапия</strong> - инъекции ботулотоксина для снятия спазма</li>
+                        <li><strong>Радиоволновая терапия</strong> - бесконтактное иссечение трещины</li>
+                        <li><strong>Лазерная коагуляция</strong> - точное воздействие на трещину</li>
+                        <li><strong>Дозированная сфинктеротомия</strong> - частичное рассечение сфинктера</li>
+                    </ul>
+                    <div class="price">От 15 000 руб. (за процедуру)</div>
+                </div>
+                
+                <div class="method-card">
+                    <h3>3. Хирургическое лечение (запущенные случаи)</h3>
+                    <ul class="advantages-list">
+                        <li><strong>Иссечение трещины с пластикой</strong> - радикальное лечение</li>
+                        <li><strong>Комбинированные методики</strong> - индивидуальный подход</li>
+                    </ul>
+                    <div class="price">От 25 000 руб.</div>
+                </div>
+            </div>
+            
+            <!-- Преимущества -->
+            <div class="treatment-section">
+                <h2>Преимущества лечения у меня</h2>
+                <ul class="advantages-list">
+                    <li>Безболезненные методики с местной анестезией</li>
+                    <li>Возможность лечения без госпитализации</li>
+                    <li>Короткий восстановительный период (1-3 дня)</li>
+                    <li>Минимальный риск осложнений</li>
+                    <li>Индивидуальный подбор терапии</li>
+                    <li>Комплексный подход к причине заболевания</li>
+                </ul>
+            </div>
+            
+            <!-- Этапы лечения -->
+            <div class="treatment-section">
+                <h2>Как проходит лечение?</h2>
+                <ol class="stages-list">
+                    <li><strong>Консультация и диагностика</strong> - осмотр, аноскопия, при необходимости - ректороманоскопия</li>
+                    <li><strong>Выбор метода лечения</strong> - на основании результатов обследования</li>
+                    <li><strong>Подготовка</strong> - очищение кишечника (при необходимости)</li>
+                    <li><strong>Процедура</strong> - проводится амбулаторно за 15-30 минут</li>
+                    <li><strong>Рекомендации</strong> - по уходу и профилактике рецидивов</li>
+                    <li><strong>Контрольный осмотр</strong> - через 7-10 дней</li>
+                </ol>
+                
+                <div class="method-card">
+                    <h3>Результаты лечения</h3>
+                    <ul class="advantages-list">
+                        <li>Исчезновение болевого синдрома в первые дни</li>
+                        <li>Полное заживление трещины за 2-4 недели</li>
+                        <li>Нормализация стула и дефекации</li>
+                        <li>Профилактика рецидивов в 95% случаев</li>
+                    </ul>
+                </div>
+                
+                <button class="appointment-btn">Записаться на консультацию</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

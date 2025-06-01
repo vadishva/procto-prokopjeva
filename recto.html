@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ректороманоскопия | Доктор Прокопьева Т.В.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-light: #3a5169;
+            --secondary: #c19a6b;
+            --light: #f8f5f2;
+            --dark: #1a1a1a;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header */
+        .procedure-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 100px 0 150px;
+            text-align: center;
+            clip-path: ellipse(120% 100% at 50% 0%);
+            margin-bottom: 80px;
+        }
+        
+        .procedure-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Контент */
+        .procedure-content {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+        
+        .procedure-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .procedure-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .procedure-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .info-card {
+            background: rgba(248, 245, 242, 0.5);
+            border-left: 3px solid var(--secondary);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .info-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .info-card .price {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-top: 15px;
+        }
+        
+        .advantages-list, .preparation-list, .indications-list, .contraindications-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .advantages-list li, .preparation-list li, 
+        .indications-list li, .contraindications-list li {
+            margin-bottom: 12px;
+            position: relative;
+            list-style-type: none;
+            padding-left: 30px;
+        }
+        
+        .advantages-list li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .preparation-list li::before {
+            content: '➤';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+        
+        .indications-list li::before {
+            content: '!';
+            color: #e74c3c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .contraindications-list li::before {
+            content: '✕';
+            color: #e74c3c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .warning-box {
+            background: rgba(255, 235, 235, 0.5);
+            border-left: 3px solid #e74c3c;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Кнопка */
+        .appointment-btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .appointment-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .procedure-header {
+                padding: 80px 0 120px;
+            }
+            
+            .procedure-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка страницы -->
+    <header class="procedure-header">
+        <div class="container">
+            <h1>Ректороманоскопия</h1>
+            <p>Точная диагностика заболеваний прямой и сигмовидной кишки</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="procedure-content">
+            <!-- О процедуре -->
+            <div class="procedure-section">
+                <h2>Что такое ректороманоскопия?</h2>
+                <p>Ректороманоскопия — это эндоскопический метод исследования прямой кишки и дистального отдела сигмовидной кишки (до 25-30 см от анального отверстия) с помощью специального прибора — ректороманоскопа.</p>
+                
+                <div class="info-card">
+                    <h3>Преимущества методики:</h3>
+                    <ul class="advantages-list">
+                        <li>Высокая информативность (точность до 95%)</li>
+                        <li>Минимальная инвазивность</li>
+                        <li>Короткая продолжительность (5-10 минут)</li>
+                        <li>Возможность проведения биопсии</li>
+                        <li>Не требует общего наркоза</li>
+                    </ul>
+                    <div class="price">Стоимость: 3 500 руб.</div>
+                </div>
+            </div>
+            
+            <!-- Показания -->
+            <div class="procedure-section">
+                <h2>Показания к проведению</h2>
+                
+                <ul class="indications-list">
+                    <li>Кровь, слизь или гной в стуле</li>
+                    <li>Хронические боли в прямой кишке</li>
+                    <li>Нарушения стула (запоры, диарея)</li>
+                    <li>Подозрение на опухоли кишечника</li>
+                    <li>Контроль после операций на прямой кишке</li>
+                    <li>Профилактический осмотр после 45 лет</li>
+                    <li>Воспалительные заболевания кишечника</li>
+                </ul>
+            </div>
+            
+            <!-- Подготовка -->
+            <div class="procedure-section">
+                <h2>Подготовка к исследованию</h2>
+                
+                <div class="info-card">
+                    <h3>За 3 дня до процедуры:</h3>
+                    <ul class="preparation-list">
+                        <li>Исключить газообразующие продукты</li>
+                        <li>Отказаться от алкоголя</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Накануне исследования:</h3>
+                    <ul class="preparation-list">
+                        <li>Легкий ужин до 18:00</li>
+                        <li>Очищение кишечника специальными препаратами</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>В день исследования:</h3>
+                    <ul class="preparation-list">
+                        <li>Легкий завтрак (если процедура во второй половине дня)</li>
+                        <li>Утром - повторное очищение кишечника</li>
+                        <li>Взять с собой полотенце и простынь</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Как проводится -->
+            <div class="procedure-section">
+                <h2>Как проводится исследование?</h2>
+                <ol class="preparation-list">
+                    <li>Пациент раздевается ниже пояса и ложится на левый бок</li>
+                    <li>Врач проводит пальцевое исследование прямой кишки</li>
+                    <li>Наконечник ректороманоскопа смазывают гелем и вводят в прямую кишку</li>
+                    <li>Под визуальным контролем аппарат продвигают вглубь кишечника</li>
+                    <li>При необходимости берут биопсию или удаляют полипы</li>
+                    <li>После извлечения аппарата кишечник очищают от остатков воздуха</li>
+                </ol>
+                
+                <div class="info-card">
+                    <h3>Ощущения во время процедуры:</h3>
+                    <p>Исследование может вызывать умеренный дискомфорт и позывы к дефекации. При выраженной болезненности возможно применение местных анестетиков.</p>
+                </div>
+            </div>
+            
+            <!-- Противопоказания -->
+            <div class="procedure-section">
+                <h2>Противопоказания</h2>
+                
+                <ul class="contraindications-list">
+                    <li>Острые воспалительные процессы в анальной области</li>
+                    <li>Тяжелые сердечно-легочные заболевания</li>
+                    <li>Психические расстройства</li>
+                    <li>Подозрение на перфорацию кишечника</li>
+                    <li>Массивное кишечное кровотечение</li>
+                    <li>Беременность (относительное противопоказание)</li>
+                </ul>
+                
+                <div class="warning-box">
+                    <h3>Важно!</h3>
+                    <p>При наличии хронических заболеваний (гипертония, диабет) необходимо предупредить врача перед исследованием.</p>
+                </div>
+            </div>
+            
+            <!-- После процедуры -->
+            <div class="procedure-section">
+                <h2>После процедуры</h2>
+                
+                <div class="info-card">
+                    <h3>Рекомендации:</h3>
+                    <ul class="advantages-list">
+                        <li>Отдых в течение 30-40 минут после исследования</li>
+                        <li>Легкое питание в первые сутки</li>
+                        <li>Ограничение физических нагрузок на 1-2 дня</li>
+                        <li>При появлении крови в стуле или болей - срочно к врачу</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Результаты:</h3>
+                    <p>Заключение выдается сразу после процедуры. Результаты биопсии готовятся 5-7 рабочих дней.</p>
+                </div>
+                
+                <button class="appointment-btn">Записаться на ректороманоскопию</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удаление кондилом | Доктор Прокопьева Т.В.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-light: #3a5169;
+            --secondary: #c19a6b;
+            --light: #f8f5f2;
+            --dark: #1a1a1a;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header */
+        .treatment-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 100px 0 150px;
+            text-align: center;
+            clip-path: ellipse(120% 100% at 50% 0%);
+            margin-bottom: 80px;
+        }
+        
+        .treatment-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Контент */
+        .treatment-content {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+        
+        .treatment-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .treatment-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .treatment-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .method-card {
+            background: rgba(248, 245, 242, 0.5);
+            border-left: 3px solid var(--secondary);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .method-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .method-card .price {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-top: 15px;
+        }
+        
+        .advantages-list, .stages-list, .symptoms-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .advantages-list li, .stages-list li, .symptoms-list li {
+            margin-bottom: 12px;
+            position: relative;
+            list-style-type: none;
+            padding-left: 30px;
+        }
+        
+        .advantages-list li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .symptoms-list li::before {
+            content: '!';
+            color: #e74c3c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .stages-list li::before {
+            content: counter(list-item);
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .stages-list {
+            counter-reset: list-item;
+        }
+        
+        .warning-box {
+            background: rgba(255, 235, 235, 0.5);
+            border-left: 3px solid #e74c3c;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Кнопка */
+        .appointment-btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .appointment-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .treatment-header {
+                padding: 80px 0 120px;
+            }
+            
+            .treatment-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка страницы -->
+    <header class="treatment-header">
+        <div class="container">
+            <h1>Удаление кондилом</h1>
+            <p>Современные безболезненные методы удаления аногенитальных бородавок</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="treatment-content">
+            <!-- О проблеме -->
+            <div class="treatment-section">
+                <h2>Что такое кондиломы?</h2>
+                <p>Кондиломы (аногенитальные бородавки) — это доброкачественные новообразования, вызванные вирусом папилломы человека (ВПЧ). Локализуются в перианальной области, на половых органах, иногда внутри анального канала.</p>
+                
+                <div class="warning-box">
+                    <h3>Тревожные симптомы:</h3>
+                    <ul class="symptoms-list">
+                        <li>Мелкие наросты в аногенитальной области</li>
+                        <li>Зуд и дискомфорт</li>
+                        <li>Кровоточивость при травмировании</li>
+                        <li>Болезненность при дефекации (при анальных кондиломах)</li>
+                        <li>Быстрый рост образований</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Методы удаления -->
+            <div class="treatment-section">
+                <h2>Современные методы удаления</h2>
+                <p>В своей практике я применяю наиболее эффективные и безопасные методики:</p>
+                
+                <div class="method-card">
+                    <h3>1. Радиоволновое удаление</h3>
+                    <ul class="advantages-list">
+                        <li>Бесконтактное воздействие радиоволнами высокой частоты</li>
+                        <li>Минимальное повреждение окружающих тканей</li>
+                        <li>Отсутствие кровотечения</li>
+                        <li>Короткий период заживления (3-5 дней)</li>
+                    </ul>
+                    <div class="price">От 1 500 руб. за элемент</div>
+                </div>
+                
+                <div class="method-card">
+                    <h3>2. Лазерная коагуляция</h3>
+                    <ul class="advantages-list">
+                        <li>Точечное воздействие лазерным лучом</li>
+                        <li>Идеально для труднодоступных мест</li>
+                        <li>Минимальный риск рецидивов</li>
+                        <li>Быстрое восстановление</li>
+                    </ul>
+                    <div class="price">От 2 000 руб. за элемент</div>
+                </div>
+                
+                <div class="method-card">
+                    <h3>3. Криодеструкция жидким азотом</h3>
+                    <ul class="advantages-list">
+                        <li>Безболезненное замораживание образований</li>
+                        <li>Подходит для небольших кондилом</li>
+                        <li>Не требует анестезии</li>
+                        <li>Нет рубцов после заживления</li>
+                    </ul>
+                    <div class="price">От 1 000 руб. за элемент</div>
+                </div>
+                
+                <div class="method-card">
+                    <h3>4. Химическая деструкция</h3>
+                    <ul class="advantages-list">
+                        <li>Применение специальных химических составов</li>
+                        <li>Курсовое лечение (3-5 процедур)</li>
+                        <li>Для чувствительных зон</li>
+                        <li>Без аппаратного воздействия</li>
+                    </ul>
+                    <div class="price">От 3 500 руб. за курс</div>
+                </div>
+            </div>
+            
+            <!-- Процесс лечения -->
+            <div class="treatment-section">
+                <h2>Как проходит лечение?</h2>
+                <ol class="stages-list">
+                    <li><strong>Консультация и диагностика</strong> - осмотр, при необходимости - анализы на ВПЧ</li>
+                    <li><strong>Выбор метода удаления</strong> - в зависимости от локализации и размеров</li>
+                    <li><strong>Обезболивание</strong> - местная анестезия (при необходимости)</li>
+                    <li><strong>Процедура удаления</strong> - длится 10-30 минут</li>
+                    <li><strong>Рекомендации</strong> - по уходу за раневой поверхностью</li>
+                    <li><strong>Контрольный осмотр</strong> - через 7-10 дней</li>
+                    <li><strong>Иммунотерапия</strong> - для профилактики рецидивов</li>
+                </ol>
+            </div>
+            
+            <!-- Преимущества -->
+            <div class="treatment-section">
+                <h2>Почему стоит обратиться ко мне?</h2>
+                <ul class="advantages-list">
+                    <li>Опыт более 500 успешных процедур удаления</li>
+                    <li>Современное оборудование экспертного класса</li>
+                    <li>Индивидуальный подбор метода для каждого пациента</li>
+                    <li>Комплексный подход (удаление + противовирусная терапия)</li>
+                    <li>Минимальный дискомфорт во время процедуры</li>
+                    <li>Отсутствие рубцов после заживления</li>
+                </ul>
+            </div>
+            
+            <!-- После процедуры -->
+            <div class="treatment-section">
+                <h2>После удаления</h2>
+                
+                <div class="method-card">
+                    <h3>Рекомендации:</h3>
+                    <ul class="advantages-list">
+                        <li>Обработка раневой поверхности назначенными средствами</li>
+                        <li>Исключение механического воздействия на область удаления</li>
+                        <li>Гигиенический душ вместо ванны</li>
+                        <li>Воздержание от половых контактов 2-3 недели</li>
+                        <li>Контрольные осмотры по графику</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <h3>Важно!</h3>
+                    <p>Удаление кондилом не избавляет от вируса ВПЧ. Для профилактики рецидивов необходима комплексная терапия, включающая иммуномодуляторы и противовирусные препараты.</p>
+                </div>
+                
+                <button class="appointment-btn">Записаться на консультацию</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доктор Прокопьева Т.В. - Обо мне</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-light: #3a5169;
+            --secondary: #c19a6b;
+            --light: #f8f5f2;
+            --dark: #1a1a1a;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header */
+        .about-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 100px 0 150px;
+            text-align: center;
+            position: relative;
+            clip-path: ellipse(120% 100% at 50% 0%);
+        }
+        
+        .about-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .about-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Main content */
+        .about-content {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--gray);
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 100%;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 30px);
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 30px);
+            text-align: left;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid var(--secondary);
+            box-shadow: 0 0 0 6px rgba(193, 154, 107, 0.2);
+        }
+        
+        .timeline-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -15px;
+            border-width: 15px 0 15px 15px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -15px;
+            border-width: 15px 15px 15px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .timeline-year {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .timeline-description {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        /* Education */
+        .education-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .education-item {
+            display: flex;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .education-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .education-icon {
+            flex: 0 0 80px;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+        
+        .education-text {
+            flex: 1;
+            padding: 25px;
+        }
+        
+        .education-degree {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .education-university {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        /* Philosophy */
+        .philosophy {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 80px 0;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .philosophy::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="%23f8f5f2" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"/><path fill="%23f8f5f2" d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"/><path fill="%23f8f5f2" d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .philosophy::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="%23f8f5f2" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"/><path fill="%23f8f5f2" d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"/><path fill="%23f8f5f2" d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: rotate(180deg);
+        }
+        
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .philosophy-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .philosophy-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 70px;
+                padding-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -15px;
+                right: auto;
+                border-width: 15px 15px 15px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .education-item {
+                flex-direction: column;
+            }
+            
+            .education-icon {
+                flex: 0 0 60px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="about-header">
+        <div class="container">
+            <h1>Обо мне</h1>
+            <p>Профессиональный путь, образование и философия работы доктора Прокопьевой Татьяны Владимировны</p>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="about-content">
+        <div class="container">
+            <section>
+                <h2 class="section-title">Моя история</h2>
+                <p class="about-text">
+                    Моя профессиональная деятельность в области проктологии началась более 18 лет назад и с тех пор 
+                    я непрерывно развиваюсь как специалист. Моя миссия - помогать пациентам сохранять здоровье 
+                    с использованием современных методов диагностики и лечения.
+                </p>
+                
+                <!-- Timeline -->
+                <div class="timeline">
+                    <!-- Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2006-2007</div>
+                            <h3 class="timeline-title">Обучение в интернатуре</h3>
+                            <p class="timeline-description">
+                                2006-2007 год - Интернатура по хирургии в Рост ГМУ 
+                                на кафедре хирургических болезней 1 г Ростова на Дону
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2013 , 2018 , 2019 , 2020</div>
+                            <h3 class="timeline-title">Курсы повышение квалификации </h3>
+                            <p class="timeline-description">
+                              Регулярное прохождение сертификационных курсов 
+                              повышения квалификации  по хирургии 
+                              колопроктологии 2013, 2018,2019, 2020,
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2019</div>
+                            <h3 class="timeline-title">Профессиональную переподготовка</h3>
+                            <p class="timeline-description">
+                                г2019г Профессиональную переподготовка по колопроктологии 
+                                ООО МУЦ Дополнительного профессионального 
+                                образования образовательный стандарт г Москва. .
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2013,2018,2022,2023</div>
+                            <h3 class="timeline-title">Мастер-классы по колопроктологи</h3>
+                            <p class="timeline-description">
+                                    2013-курс по Лапароскопической хирургии  Мастер -классы  и курсы по колопроктологии 2022г. 
+                                    Неотложная колопроктология г Хабаровск .                                                               
+                                    2022г Нутритивная помощь пациентам хирургического профиля в реанимации г Санкт-Петербург.                                                   
+                                    2023Мастер -класс Дидактика современной малой проктологии с отработкой практических навыков в Wet lab г Москва.
+                                    2023г   Мастер -класс  применение лазерных методик с использованием лазерного оборудования г. Н. Новгород.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2007-2025</div>
+                            <h3 class="timeline-title">Ведущий специалист женщина проктолог</h3>
+                            <p class="timeline-description">
+                                Работаю хирургом с 2007 года , более 18 лет. 
+                                Владею оперативными  методиками и  малоинвазивными вмешательствами при  
+                                геморрое, анальных трещинах.полипах анального канала, 
+                                кондиломах и другой патологии прямой кишки.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2021-настоящее время</div>
+                            <h3 class="timeline-title">Частная практика и научная работа</h3>
+                            <p class="timeline-description">
+                                Веду прием в собственном кабинете, оснащенном современным оборудованием. 
+                                Продолжаю научную деятельность, публикую статьи в международных журналах, 
+                                регулярно выступаю на конференциях.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Education -->
+            <section>
+                <h2 class="section-title">Образование</h2>
+                
+                <div class="education-list">
+                    <!-- Education 1 -->
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-text">
+                            <h3 class="education-degree">Высшее медицинское образование</h3>
+                            <p class="education-university">Ростовский государственный медицинский университет </p>
+                            <p class="timeline-description">
+                                Окончила  Ростовский государственный медицинский университет Специальность лечебное дело 2006 год. 
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Education 2 -->
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="education-text">
+                            <h3 class="education-degree">Сертификат по проктологии</h3>
+                            <p class="education-university">Российская медицинская академия</p>
+                            <p class="timeline-description">
+                                Прошла профессиональную переподготовку по специальности "Колопроктология" 
+                                в Российской медицинской академии последипломного образования.ООО МУЦ ДПО образовательный стандарт г Москва. 
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Education 3 -->
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="education-text">
+                            <h3 class="education-degree">Курсы повышения квалификации</h3>
+                            <p class="education-university">Международные центры</p>
+                            <p class="timeline-description">
+                                Ежегодно прохожу курсы повышения квалификации в России. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Philosophy -->
+            <section class="philosophy">
+                <div class="container">
+                    <div class="philosophy-content">
+                        <h2 class="philosophy-title">Моя философия работы</h2>
+                        <p class="philosophy-text">
+                            Я убеждена, что качественная медицинская помощь должна быть основана на трех принципах: 
+                            доказательная медицина, индивидуальный подход и максимальный комфорт для пациента даже 
+                            в самых деликатных ситуациях.
+                        </p>
+                        <p class="philosophy-text">
+                            В своей практике я сочетаю современные международные протоколы с внимательным 
+                            отношением к каждому пациенту. Для меня важно не только вылечить заболевание, 
+                            но и сохранить качество жизни человека.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Анимация временной шкалы при скролле
+        function animateOnScroll() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const educationItems = document.querySelectorAll('.education-item');
+            
+            timelineItems.forEach((item, index) => {
+                const itemPosition = item.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(itemPosition < screenPosition) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+            
+            educationItems.forEach((item, index) => {
+                const itemPosition = item.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(itemPosition < screenPosition) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лечение геморроя | Доктор Прокопьева Т.В.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-light: #3a5169;
+            --secondary: #c19a6b;
+            --light: #f8f5f2;
+            --dark: #1a1a1a;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header */
+        .treatment-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 100px 0 150px;
+            text-align: center;
+            clip-path: ellipse(120% 100% at 50% 0%);
+            margin-bottom: 80px;
+        }
+        
+        .treatment-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Контент */
+        .treatment-content {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+        
+        .treatment-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .treatment-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .treatment-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .method-card {
+            background: rgba(248, 245, 242, 0.5);
+            border-left: 3px solid var(--secondary);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .method-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .method-card .price {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-top: 15px;
+        }
+        
+        .advantages-list, .stages-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .advantages-list li, .stages-list li {
+            margin-bottom: 12px;
+            position: relative;
+            list-style-type: none;
+            padding-left: 30px;
+        }
+        
+        .advantages-list li::before, .stages-list li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .warning-box {
+            background: rgba(255, 235, 235, 0.5);
+            border-left: 3px solid #e74c3c;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Кнопка */
+        .appointment-btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .appointment-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .treatment-header {
+                padding: 80px 0 120px;
+            }
+            
+            .treatment-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка страницы -->
+    <header class="treatment-header">
+        <div class="container">
+            <h1>Современное лечение геморроя</h1>
+            <p>Эффективные методики для всех стадий заболевания</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="treatment-content">
+            <!-- О геморрое -->
+            <div class="treatment-section">
+                <h2>Что такое геморрой?</h2>
+                <p>Геморрой — это варикозное расширение геморроидальных вен прямой кишки, сопровождающееся такими симптомами как кровотечение, выпадение узлов, боль и зуд. Заболевание развивается постепенно и требует профессионального лечения на любой стадии.</p>
+                
+                <div class="warning-box">
+                    <h3>Когда необходимо обратиться к врачу?</h3>
+                    <ul class="advantages-list">
+                        <li>Кровь при дефекации (на туалетной бумаге или в кале)</li>
+                        <li>Дискомфорт, зуд или жжение в анальной области</li>
+                        <li>Ощущение инородного тела в прямой кишке</li>
+                        <li>Выпадение геморроидальных узлов</li>
+                        <li>Болевые ощущения при сидении или дефекации</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Методы лечения -->
+            <div class="treatment-section">
+                <h2>Методы лечения</h2>
+                <p>В своей практике я применяю комплексный подход, выбирая метод лечения в зависимости от стадии заболевания и индивидуальных особенностей пациента.</p>
+                
+                <div class="method-card">
+                    <h3>1. Консервативное лечение (I стадия)</h3>
+                    <ul class="advantages-list">
+                        <li>Индивидуальный подбор медикаментозной терапии</li>
+                        <li>Коррекция образа жизни и питания</li>
+                        <li>Лечебная физкультура</li>
+                        <li>Местное лечение (мази, свечи)</li>
+                    </ul>
+                    <div class="price">От 5 000 руб. (курс лечения)</div>
+                </div>
+                
+                <div class="method-card">
+                    <h3>2. Малоинвазивные методы (I-III стадия)</h3>
+                    <ul class="advantages-list">
+                        <li><strong>Лигирование латексными кольцами</strong> - перетягивание узла специальным кольцом</li>
+                        <li><strong>Склеротерапия</strong> - введение склерозирующего препарата</li>
+                        <li><strong>Инфракрасная коагуляция</strong> - воздействие тепловой энергией</li>
+                        <li><strong>Радиоволновая терапия</strong> - бесконтактное иссечение узлов</li>
+                    </ul>
+                    <div class="price">От 15 000 руб. (за 1 процедуру)</div>
+                </div>
+                
+                <div class="method-card">
+                    <h3>3. Хирургическое лечение (III-IV стадия)</h3>
+                    <ul class="advantages-list">
+                        <li><strong>Геморроидэктомия</strong> - радикальное удаление узлов</li>
+                        <li><strong>Метод Лонго</strong> - циркулярная резекция слизистой</li>
+                        <li><strong>Дезартеризация (HAL-RAR)</strong> - перевязка питающих артерий</li>
+                    </ul>
+                    <div class="price">От 35 000 руб.</div>
+                </div>
+            </div>
+            
+            <!-- Преимущества -->
+            <div class="treatment-section">
+                <h2>Почему стоит обратиться именно ко мне?</h2>
+                <ul class="advantages-list">
+                    <li>Более 15 лет специализации в проктологии</li>
+                    <li>Применение только доказанных эффективных методик</li>
+                    <li>Индивидуальный подход к каждому пациенту</li>
+                    <li>Современное оборудование экспертного класса</li>
+                    <li>Минимальный восстановительный период после процедур</li>
+                    <li>Комплексное ведение пациента от диагностики до реабилитации</li>
+                </ul>
+            </div>
+            
+            <!-- Как проходит лечение -->
+            <div class="treatment-section">
+                <h2>Как проходит лечение?</h2>
+                <ol class="stages-list">
+                    <li><strong>Первичная консультация</strong> - осмотр, сбор анамнеза, постановка диагноза</li>
+                    <li><strong>Диагностика</strong> - при необходимости назначаются дополнительные исследования</li>
+                    <li><strong>Выбор метода лечения</strong> - совместно с пациентом</li>
+                    <li><strong>Проведение процедуры</strong> - в комфортных условиях</li>
+                    <li><strong>Рекомендации</strong> - по восстановлению и профилактике рецидивов</li>
+                    <li><strong>Контрольный осмотр</strong> - через 7-14 дней</li>
+                </ol>
+                
+                <button class="appointment-btn">Записаться на консультацию</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
